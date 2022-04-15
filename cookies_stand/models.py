@@ -7,7 +7,7 @@ class Cookies(models.Model):
     owner = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, null=True, blank=True
     )
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, default="")
     hourly_sales = models.JSONField(default=list, null=True)
     minimum_customers_per_hour = models.IntegerField(default=0)
     maximum_customers_per_hour = models.IntegerField(default=0)
